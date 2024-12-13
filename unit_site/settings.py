@@ -120,3 +120,20 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     ]
 }
+
+DJOSER = {
+    # "LOGIN_FIELD": "username",
+    # "SOCIAL_AUTH_TOKEN_STRATEGY": "djoser.social.token.jwt.TokenStrategy",
+    # "SOCIAL_AUTH_ALLOWED_REDIRECT_URIS": [
+    #     "your redirect url",
+    #     "your redirect url",
+    # ],
+    "SERIALIZERS": {
+        "user_create": "users.serializers.CustomUserSerializer",  # custom serializer
+        "user": "djoser.serializers.UserSerializer",
+        "current_user": "djoser.serializers.UserSerializer",
+        "user_delete": "djoser.serializers.UserSerializer",
+    },
+}
+
+AUTH_USER_MODEL = 'users.CustomUser'
