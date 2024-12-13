@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'rest_framework',  # DRF
     'djoser',  # For token auth
     'corsheaders',  # CORS
-    'rest_framework.authtoken'  # For token auth
+    'rest_framework.authtoken',  # For token auth
+    'api_app',
 ]
 
 MIDDLEWARE = [
