@@ -5,14 +5,15 @@ from .views import *
 # url-prefix: api-app/
 
 urlpatterns = [
-    path('create-event/', CreateEventAPIView.as_view(), name='create-event'),  # POST
-    path('all-events/', CreateEventAPIView.as_view(), name='all-events'),  # GET
-    path('get-event/<int:pk>/', GetEventAPIView.as_view(), name='get-event'),  # GET
-    path('upd-del-event/<int:pk>/', UpdateOrDeleteEventAPIView.as_view(), name='update-delete-event'),  # PATCH
+    path('all-events/', CreateEventAPIView.as_view(), name='all_events'),  # GET
+    path('get-event/<int:pk>/', GetEventAPIView.as_view(), name='get_event'),  # GET
+    path('all-news/', GetAllNewsAPIView.as_view(), name='all_news'),  # GET
+    path('get-new/<int:pk>/', GetNewAPIView.as_view(), name='get_new'),  # GET
 ]
 
 
-# POST: create-event/ - создание события (для админов)
-# GET: all-events/ - вывод всех событий (для всех)
-# GET: get-event/<int:pk>/ - получение события (для всех)
-# PATCH: upd-del-event/<int:pk>/ - изменение события (для админов)
+# GET: all-events/ - вывод всех событий
+# GET: get-event/<int:pk>/ - получение события
+# GET: all-news/ - вывод всех новостей
+# GET: get-new/<int:pk>/ - получение конкретной новости
+

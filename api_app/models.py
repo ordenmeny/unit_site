@@ -13,6 +13,10 @@ class Event(models.Model):
     def __str__(self):
         return self.name[:30]
 
+    class Meta:
+        verbose_name = 'События'
+        verbose_name_plural = 'События'
+
 
 class News(models.Model):
     title = models.CharField(max_length=255)
@@ -23,3 +27,7 @@ class News(models.Model):
 
     def __str__(self):
         return self.title[:30]
+
+    class Meta:
+        verbose_name = 'Новости'
+        verbose_name_plural = 'Новости'

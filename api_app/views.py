@@ -1,7 +1,17 @@
 from django.shortcuts import render
-from rest_framework.generics import ListCreateAPIView, RetrieveAPIView, RetrieveUpdateDestroyAPIView
-from .serializers import EventSerializer
-from .models import Event
+from rest_framework.generics import ListCreateAPIView, RetrieveAPIView, RetrieveUpdateDestroyAPIView, ListAPIView
+from .serializers import *
+from .models import *
+
+
+class GetNewAPIView(RetrieveAPIView):
+    serializer_class = NewsSerializer
+    queryset = News.objects.all()
+
+
+class GetAllNewsAPIView(ListAPIView):
+    serializer_class = NewsSerializer
+    queryset = News.objects.all()
 
 
 class BaseViewEvents:
@@ -19,4 +29,3 @@ class GetEventAPIView(BaseViewEvents, RetrieveAPIView):
 
 class UpdateOrDeleteEventAPIView(BaseViewEvents, RetrieveUpdateDestroyAPIView):
     pass
-
