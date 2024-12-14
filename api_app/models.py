@@ -22,7 +22,7 @@ class News(models.Model):
     title = models.CharField(max_length=255)
     text = models.TextField()
     date_created = models.DateField(auto_now=True)
-    author = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, null=True)
+    # author = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, null=True)
     # image ...
 
     def __str__(self):

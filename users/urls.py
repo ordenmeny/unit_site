@@ -4,6 +4,7 @@ from .views import *
 
 urlpatterns = [
     path("all-users/", AllUsersAPIView.as_view()),
+    path("get-user/<int:pk>/", GetUserAPIView.as_view()),
     re_path(r'^auth/', include('djoser.urls')),
     re_path(r'^auth/', include('djoser.urls.authtoken')),
 ]

@@ -53,6 +53,20 @@ http://127.0.0.1:8000/
 ```http
   GET /api-app/all-events/
 ```
+#### Response
+```json
+[
+  {
+    "id": 1,
+    "name": "Встреча 1",
+    "date": "YYYY-MM-DD",
+    "time": "HH:MM:SS",
+    "place": "В ИРИТ-РТФ",
+    "description": "Питчинг проектов"
+  }
+]
+```
+
 
 #### Get a specific event
 
@@ -74,7 +88,20 @@ http://127.0.0.1:8000/
   GET /api-app/all-news/
 ```
 
-#### Get a specific event
+#### Response
+```json
+
+[
+  {
+    "id": 1,
+    "title": "Новость 1",
+    "text": "Текст к новости 1",
+    "date_created": "YYYY-MM-DD"
+  }
+]
+```
+
+#### Get a specific news
 
 ```http
   GET /api-app/get-new/<pk>/
@@ -92,4 +119,38 @@ http://127.0.0.1:8000/
 ```http
   GET /api-auth/all-users/
 ```
+
+#### Response
+```json
+[
+    {
+        "id": 6,
+        "first_name": "Иван",
+        "last_name": "Коваленко",
+        "social_link": "lenin.com",
+        "description": "Описание",
+        "position": "Дезигнер"
+    }
+]
+```
+
+
+#### Get a specific user by id
+```http
+  GET /api-auth/get-user/<id>/
+```
+
+
+#### Response
+```json
+{
+        "id": 7,
+        "first_name": "Иван 2",
+        "last_name": "Коваленко 2",
+        "social_link": "lenin.com 2",
+        "description": "Описание 2",
+        "position": "Дезигнер 2"
+}
+```
+
 
