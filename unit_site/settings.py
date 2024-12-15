@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'corsheaders',  # CORS
     'rest_framework.authtoken',  # For token auth
     'api_app',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -118,7 +119,8 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
-    ]
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 AUTH_USER_MODEL = 'users.CustomUser'
