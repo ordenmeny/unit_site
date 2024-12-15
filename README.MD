@@ -48,7 +48,8 @@ http://127.0.0.1:8000/
 
 ## API Reference
 
-#### Get all events
+### Events:
+#### 1) Get all events
 
 ```http
   GET /api-app/all-events/
@@ -68,7 +69,7 @@ http://127.0.0.1:8000/
 ```
 
 
-#### Get a specific event
+#### 2) Get a specific event
 
 ```http
   GET /api-app/get-event/<pk>/
@@ -79,10 +80,10 @@ http://127.0.0.1:8000/
 | `pk` | **Required**. Id of item to fetch |
 
 
+---
 
-
-
-#### Get all news
+### News:
+#### 1) Get all news
 
 ```http
   GET /api-app/all-news/
@@ -101,7 +102,7 @@ http://127.0.0.1:8000/
 ]
 ```
 
-#### Get a specific news
+#### 2) Get a specific news
 
 ```http
   GET /api-app/get-new/<pk>/
@@ -112,9 +113,10 @@ http://127.0.0.1:8000/
 | `pk` | **Required**. Id of item to fetch |
 
 
+---
 
-
-#### Get all users
+### Users:
+#### 1) Get all users
 
 ```http
   GET /api-auth/all-users/
@@ -135,7 +137,7 @@ http://127.0.0.1:8000/
 ```
 
 
-#### Get a specific user by id
+#### 2) Get a specific user by id
 ```http
   GET /api-auth/get-user/<id>/
 ```
@@ -153,4 +155,41 @@ http://127.0.0.1:8000/
 }
 ```
 
+---
+
+### Projects:
+#### 1) Get all projects
+
+```http
+  GET /api-auth/all-projects/
+```
+
+#### Response
+```json
+[
+    {
+        "id": 1,
+        "name": "NewsMobile",
+        "description": "Описание проекта",
+        "link": "https://newsmobile.com/"
+    }
+]
+```
+
+
+#### 2) Get a specific project by id
+```http
+  GET /api-auth/get-project/<id>/
+```
+
+
+#### Response
+```json
+{
+    "id": 1,
+    "name": "NewsMobile",
+    "description": "Описание проекта",
+    "link": "https://newsmobile.com/"
+}
+```
 

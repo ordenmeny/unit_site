@@ -5,10 +5,12 @@ from .views import *
 # url-prefix: api-app/
 
 urlpatterns = [
-    path('all-events/', CreateEventAPIView.as_view(), name='all_events'),  # GET
-    path('get-event/<int:pk>/', GetEventAPIView.as_view(), name='get_event'),  # GET
-    path('all-news/', GetAllNewsAPIView.as_view(), name='all_news'),  # GET
-    path('get-new/<int:pk>/', GetNewAPIView.as_view(), name='get_new'),  # GET
+    path('all-events/', CreateEventAPIView.as_view()),  # GET
+    path('get-event/<int:pk>/', GetEventAPIView.as_view()),  # GET
+    path('all-news/', GetAllNewsAPIView.as_view()),  # GET
+    path('get-new/<int:pk>/', GetNewAPIView.as_view()),  # GET
+    path('all-projects/', GetAllProjectsAPIView.as_view()),
+    path('get-project/<int:pk>/', GetProjectAPIView.as_view()),
 ]
 
 

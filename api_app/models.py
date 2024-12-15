@@ -8,7 +8,6 @@ class Event(models.Model):
     time = models.TimeField(null=True, blank=True)
     place = models.CharField(max_length=255)
     description = models.CharField(max_length=1000)
-    # is_private = models.BooleanField(default=True)  # Вход свободный или нет?
 
     def __str__(self):
         return self.name[:30]
@@ -22,7 +21,6 @@ class News(models.Model):
     title = models.CharField(max_length=255)
     text = models.TextField()
     date_created = models.DateField(auto_now=True)
-    # author = models.ForeignKey(get_user_model(), on_delete=models.SET_NULL, null=True)
     # image ...
 
     def __str__(self):
@@ -31,3 +29,18 @@ class News(models.Model):
     class Meta:
         verbose_name = 'Новости'
         verbose_name_plural = 'Новости'
+
+
+
+class Project(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.CharField(max_length=1000)
+    link = models.URLField(null=True, blank=True)
+    # image ...
+
+    def __str__(self):
+        return self.name[:30]
+
+    class Meta:
+        verbose_name = 'Проекты'
+        verbose_name_plural = 'Проекты'

@@ -12,3 +12,9 @@ class NewsSerializer(ModelSerializer):
     class Meta:
         model = News
         fields = "__all__"
+
+
+class ProjectSerializer(ModelSerializer):
+    class Meta:
+        model = Project
+        fields = "__all__"

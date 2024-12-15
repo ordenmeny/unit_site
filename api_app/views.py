@@ -4,12 +4,7 @@ from .serializers import *
 from .models import *
 
 
-class GetNewAPIView(RetrieveAPIView):
-    serializer_class = NewsSerializer
-    queryset = News.objects.all()
-
-
-class GetAllNewsAPIView(ListAPIView):
+class BaseViewNews:
     serializer_class = NewsSerializer
     queryset = News.objects.all()
 
@@ -17,6 +12,28 @@ class GetAllNewsAPIView(ListAPIView):
 class BaseViewEvents:
     serializer_class = EventSerializer
     queryset = Event.objects.all()
+
+
+class BaseViewProjects:
+    serializer_class = ProjectSerializer
+    queryset = Project.objects.all()
+
+
+
+class GetAllProjectsAPIView(BaseViewProjects, ListAPIView):
+    pass
+
+
+class GetProjectAPIView(BaseViewProjects, RetrieveAPIView):
+    pass
+
+
+class GetNewAPIView(BaseViewNews, RetrieveAPIView):
+    pass
+
+
+class GetAllNewsAPIView(BaseViewNews, ListAPIView):
+    pass
 
 
 class CreateEventAPIView(BaseViewEvents, ListCreateAPIView):
