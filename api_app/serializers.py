@@ -18,3 +18,9 @@ class ProjectSerializer(ModelSerializer):
     class Meta:
         model = Project
         fields = "__all__"
+
+
+class ApplySerializer(ModelSerializer):
+    class Meta:
+        model = Apply
+        fields = "__all__"

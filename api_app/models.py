@@ -3,11 +3,11 @@ from django.db import models
 
 
 class Event(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, null=True, blank=True)
     date = models.DateField(null=True, blank=True)
     time = models.TimeField(null=True, blank=True)
-    place = models.CharField(max_length=255)
-    description = models.CharField(max_length=1000)
+    place = models.CharField(max_length=255, null=True, blank=True)
+    description = models.CharField(max_length=1000, null=True, blank=True)
 
     def __str__(self):
         return self.name[:30]
@@ -18,9 +18,9 @@ class Event(models.Model):
 
 
 class News(models.Model):
-    title = models.CharField(max_length=255)
-    text = models.TextField()
-    date_created = models.DateField(auto_now=True)
+    title = models.CharField(max_length=255, null=True, blank=True)
+    text = models.TextField(null=True, blank=True)
+    date_created = models.DateField(auto_now=True, null=True, blank=True)
     # image ...
 
     def __str__(self):
@@ -44,3 +44,13 @@ class Project(models.Model):
     class Meta:
         verbose_name = 'Проекты'
         verbose_name_plural = 'Проекты'
+
+
+class Apply(models.Model):
+    name = models.CharField(max_length=255)
+    link = models.URLField()
+    links_text = models.TextField()
+    reason = models.TextField()
+
+    def __str__(self):
+        return self.name

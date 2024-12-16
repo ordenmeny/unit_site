@@ -4,6 +4,17 @@ from .serializers import *
 from .models import *
 
 
+class BaseViewApply:
+    serializer_class = ApplySerializer
+    queryset = Apply.objects.all()
+
+
+class CreateApplyAPIView(BaseViewApply, ListCreateAPIView):
+    pass
+
+
+
+
 class BaseViewNews:
     serializer_class = NewsSerializer
     queryset = News.objects.all()
