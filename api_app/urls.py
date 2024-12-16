@@ -12,9 +12,9 @@ urlpatterns = [
     path('all-projects/', GetAllProjectsAPIView.as_view()),
     path('get-project/<int:pk>/', GetProjectAPIView.as_view()),
 
-    path('create-event/', CreateEventAPIView.as_view()),  # POST, GET
-
     path('create-apply/', CreateApplyAPIView.as_view()),  # POST, GET(all)
+
+    path('create-new/', CreateNewAPIView.as_view()),  # POST
 ]
 
 # GET: all-events/ - вывод всех событий

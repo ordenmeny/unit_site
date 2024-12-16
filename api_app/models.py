@@ -10,6 +10,7 @@ class News(models.Model):
     text = models.TextField(null=True, blank=True)
     date_created = models.DateField(auto_now=True, null=True, blank=True)
     image = models.ImageField(null=True, blank=True, upload_to='news/')
+    image_telegram = models.URLField(null=True, blank=True)
 
     def __str__(self):
         return self.title[:30]
