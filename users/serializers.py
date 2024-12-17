@@ -12,4 +12,4 @@ class CustomUserSerializer(UserCreateSerializer):
 class SimpleUserSerializer(UserSerializer):
     class Meta(CustomUserSerializer.Meta):
         model = get_user_model()
-        fields = ('id', 'first_name', 'last_name', 'social_link', 'description', 'position')
+        fields = ('id', 'first_name', 'last_name', 'social_link', 'description', 'position', 'image')
