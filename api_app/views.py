@@ -6,7 +6,7 @@ import telebot
 
 
 TOKEN = "7776430508:AAFrx_63g1wJjM9hiyXqxM90KCX1E81heyA"
-CHAT_ID = [1692072411, 1206446127]  # user_id админа.
+CHAT_ID = [1692072411, ]  # user_id админа. 1206446127
 
 tb = telebot.TeleBot(TOKEN)
 
@@ -33,6 +33,8 @@ class BaseViewProjects:
 
 class CreateNewAPIView(BaseViewNews, ListCreateAPIView):
     pass
+    #     def post(self, request, *args, **kwargs):
+    #         return self.create(request, *args, **kwargs)
 
 
 class CreateApplyAPIView(BaseViewApply, ListCreateAPIView):
