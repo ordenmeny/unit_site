@@ -32,7 +32,7 @@ class News(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=255, unique=True)
     description = models.CharField(max_length=1000)
-    link = models.URLField(null=True, blank=True)
+    link = models.CharField(null=True, blank=True, max_length=255)
     image = models.ImageField(null=True, blank=True, upload_to='projects/')
 
     def __str__(self):
@@ -54,7 +54,7 @@ class Project(models.Model):
 
 class Apply(models.Model):
     name = models.CharField(max_length=255)
-    link = models.URLField()
+    link = models.CharField(max_length=255)
     links_text = models.TextField()
     reason = models.TextField()
 
