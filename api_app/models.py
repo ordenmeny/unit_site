@@ -55,7 +55,7 @@ class Project(models.Model):
 class Apply(models.Model):
     name = models.CharField(max_length=255)
     link = models.CharField(max_length=255)
-    links_text = models.TextField()
+    links_text = models.TextField(null=True, blank=True)
     reason = models.TextField()
 
     def __str__(self):
