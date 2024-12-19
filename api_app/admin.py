@@ -11,3 +11,4 @@ class CustomNewsAdmin(admin.ModelAdmin):
 
 
 admin.site.register(News, CustomNewsAdmin)
+admin.site.register(Apply)
