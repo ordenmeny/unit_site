@@ -22,6 +22,4 @@ class CustomUser(AbstractUser):
         super(CustomUser, self).save(*args, **kwargs)
 
     def __str__(self):
-        if self.username:
-            return self.username
-        return self.first_name
+        return f"{self.first_name} {self.last_name}"
