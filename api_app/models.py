@@ -31,7 +31,7 @@ class News(models.Model):
 
 class Project(models.Model):
     name = models.CharField(max_length=255, unique=True)
-    description = models.CharField(max_length=1000)
+    description = models.TextField(null=True, blank=True)
     link = models.CharField(null=True, blank=True, max_length=255)
     image = models.ImageField(null=True, blank=True, upload_to='projects/')
 
@@ -61,13 +61,17 @@ class Apply(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'Заявки'
+        verbose_name_plural = 'Заявки'
+
 
 class Event(models.Model):
     name = models.CharField(max_length=255, null=True, blank=True)
     date = models.DateField(null=True, blank=True)
     time = models.TimeField(null=True, blank=True)
     place = models.CharField(max_length=255, null=True, blank=True)
-    description = models.CharField(max_length=1000, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.name[:30]
