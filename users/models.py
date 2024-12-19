@@ -11,6 +11,8 @@ class CustomUser(AbstractUser):
     image = models.ImageField(null=True, blank=True, upload_to='users/')
 
     def save(self, *args, **kwargs):
+        self.username = f'{self.first_name}{self.last_name}{self.pk}'
+
         if self.image:
             name, extension = os.path.splitext(self.image.name)
 
